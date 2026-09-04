@@ -2,12 +2,10 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import {
   Phone, Menu, X, Factory, Banknote, CalendarClock, ShieldCheck,
-  Square, RectangleHorizontal, Frame, DoorOpen, Grid2x2, Sun, TreePalm,
-  DoorClosed, Grid3x3, Wrench, ArrowRight, Quote, ChevronLeft, ChevronRight,
-  Star, MapPin, Mail, Clock, Calculator, Building2, Layers, FileCheck,
-  FileText, Sparkles, Trash2, ArrowUpRight, Award, CheckCircle2,
-  Check, User, Loader2, Send, XCircle, Target, Users, TrendingUp,
-  MessageCircle, Send as SendIcon,
+  Wrench, ArrowRight, Quote, ChevronLeft, ChevronRight,
+  Star, MapPin, Mail, Clock, FileCheck,
+  Trash2, ArrowUpRight, CheckCircle2,
+  Check, User, Loader2, Send, XCircle,
 } from 'lucide-react';
 import { useReveal, useCountUp } from '@/hooks';
 
