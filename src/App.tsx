@@ -156,7 +156,7 @@ function Hero({ onQuiz }: { onQuiz: () => void }) {
         <div className="hero-visual" aria-hidden="true">
           <img
             className="hero-img"
-            src="https://images.pexels.com/photos/11861957/pexels-photo-11861957.jpeg?auto=compress&cs=tinysrgb&w=1400"
+            src="https://images.pexels.com/photos/35534776/pexels-photo-35534776.jpeg?auto=compress&cs=tinysrgb&w=1400"
             alt="Фасад здания с алюминиевой витражной системой"
             loading="eager"
           />
@@ -201,7 +201,7 @@ function About({ onQuiz }: { onQuiz: () => void }) {
           <div className="about-left">
             <div className="about-img-wrap">
               <img
-                src="https://images.pexels.com/photos/8961342/pexels-photo-8961342.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                src="https://images.pexels.com/photos/11951215/pexels-photo-11951215.jpeg?auto=compress&cs=tinysrgb&w=1200"
                 alt="Производственный цех — процесс изготовления конструкций"
                 loading="lazy"
               />
@@ -1020,7 +1020,7 @@ function Faq() {
 type QuizStep = {
   key: string;
   question: string;
-  options: { label: string; value: string; photo: string }[];
+  options: { label: string; value: string }[];
 };
 
 const QUIZ_STEPS: QuizStep[] = [
@@ -1028,34 +1028,34 @@ const QUIZ_STEPS: QuizStep[] = [
     key: 'type',
     question: 'Что вам нужно?',
     options: [
-      { label: 'Остекление балкона', value: 'балкон', photo: 'https://images.pexels.com/photos/6538933/pexels-photo-6538933.jpeg?auto=compress&cs=tinysrgb&w=400' },
-      { label: 'Окна (алюминий / пластик)', value: 'окна', photo: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400' },
-      { label: 'Фасад / витраж', value: 'фасад', photo: 'https://images.pexels.com/photos/11861957/pexels-photo-11861957.jpeg?auto=compress&cs=tinysrgb&w=400' },
-      { label: 'Входная группа', value: 'входная группа', photo: 'https://images.pexels.com/photos/181341/office-work-office-building-181341.jpeg?auto=compress&cs=tinysrgb&w=400' },
-      { label: 'Перегородка', value: 'перегородка', photo: 'https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=400' },
-      { label: 'Навес / козырёк', value: 'навес', photo: 'https://images.pexels.com/photos/2596277/pexels-photo-2596277.jpeg?auto=compress&cs=tinysrgb&w=400' },
-      { label: 'Металлоконструкции', value: 'металлоконструкции', photo: 'https://images.pexels.com/photos/8961342/pexels-photo-8961342.jpeg?auto=compress&cs=tinysrgb&w=400' },
-      { label: 'Другое', value: 'другое', photo: 'https://images.pexels.com/photos/2092699/pexels-photo-2092699.jpeg?auto=compress&cs=tinysrgb&w=400' },
+      { label: 'Остекление балкона', value: 'балкон' },
+      { label: 'Окна (алюминий / пластик)', value: 'окна' },
+      { label: 'Фасад / витраж', value: 'фасад' },
+      { label: 'Входная группа', value: 'входная группа' },
+      { label: 'Перегородка', value: 'перегородка' },
+      { label: 'Навес / козырёк', value: 'навес' },
+      { label: 'Металлоконструкции', value: 'металлоконструкции' },
+      { label: 'Другое', value: 'другое' },
     ],
   },
   {
     key: 'location',
     question: 'Где находится объект?',
     options: [
-      { label: 'Саратов', value: 'Саратов', photo: 'https://images.pexels.com/photos/11596849/pexels-photo-11596849.jpeg?auto=compress&cs=tinysrgb&w=400' },
-      { label: 'Энгельс', value: 'Энгельс', photo: 'https://images.pexels.com/photos/11596849/pexels-photo-11596849.jpeg?auto=compress&cs=tinysrgb&w=400' },
-      { label: 'Саратовская область', value: 'Саратовская область', photo: 'https://images.pexels.com/photos/11596849/pexels-photo-11596849.jpeg?auto=compress&cs=tinysrgb&w=400' },
-      { label: 'Другой город', value: 'Другой город', photo: 'https://images.pexels.com/photos/11596849/pexels-photo-11596849.jpeg?auto=compress&cs=tinysrgb&w=400' },
+      { label: 'Саратов', value: 'Саратов' },
+      { label: 'Энгельс', value: 'Энгельс' },
+      { label: 'Саратовская область', value: 'Саратовская область' },
+      { label: 'Другой город', value: 'Другой город' },
     ],
   },
   {
     key: 'when',
     question: 'Когда планируете начать?',
     options: [
-      { label: 'Как можно скорее', value: 'срочно', photo: 'https://images.pexels.com/photos/7437486/pexels-photo-7437486.jpeg?auto=compress&cs=tinysrgb&w=400' },
-      { label: 'В течение месяца', value: 'месяц', photo: 'https://images.pexels.com/photos/7437486/pexels-photo-7437486.jpeg?auto=compress&cs=tinysrgb&w=400' },
-      { label: 'Через 2–3 месяца', value: '2-3 месяца', photo: 'https://images.pexels.com/photos/7437486/pexels-photo-7437486.jpeg?auto=compress&cs=tinysrgb&w=400' },
-      { label: 'Пока просто узнаю цену', value: 'узнать цену', photo: 'https://images.pexels.com/photos/7437486/pexels-photo-7437486.jpeg?auto=compress&cs=tinysrgb&w=400' },
+      { label: 'Как можно скорее', value: 'срочно' },
+      { label: 'В течение месяца', value: 'месяц' },
+      { label: 'Через 2–3 месяца', value: '2-3 месяца' },
+      { label: 'Пока просто узнаю цену', value: 'узнать цену' },
     ],
   },
 ];
@@ -1127,7 +1127,7 @@ function QuizModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   return (
     <>
       <div className="quiz-overlay" onClick={onClose} />
-      <div className="quiz-modal quiz-modal-photo" role="dialog" aria-modal="true" aria-label="Квиз расчёта стоимости">
+      <div className="quiz-modal" role="dialog" aria-modal="true" aria-label="Квиз расчёта стоимости">
         <button className="quiz-close" type="button" aria-label="Закрыть" onClick={onClose}>
           <X size={20} />
         </button>
@@ -1162,20 +1162,16 @@ function QuizModal({ open, onClose }: { open: boolean; onClose: () => void }) {
             {!isContactStep ? (
               <div className="quiz-body" key={stepIdx}>
                 <h3 className="quiz-question">{QUIZ_STEPS[stepIdx].question}</h3>
-                <div className="quiz-options-photo">
+                <div className="quiz-options">
                   {QUIZ_STEPS[stepIdx].options.map(opt => (
                     <button
                       key={opt.value}
                       type="button"
-                      className={`quiz-option-photo${answers[QUIZ_STEPS[stepIdx].key] === opt.value ? ' selected' : ''}`}
+                      className={`quiz-option${answers[QUIZ_STEPS[stepIdx].key] === opt.value ? ' selected' : ''}`}
                       onClick={() => selectAnswer(QUIZ_STEPS[stepIdx], opt.value)}
                     >
-                      <div className="quiz-opt-img">
-                        <img src={opt.photo} alt={opt.label} loading="lazy" />
-                        <div className="quiz-opt-img-overlay" />
-                      </div>
-                      <span className="quiz-opt-label">{opt.label}</span>
-                      <span className="quiz-opt-check"><Check size={14} /></span>
+                      <span>{opt.label}</span>
+                      <ArrowRight size={16} className="quiz-option-arrow" />
                     </button>
                   ))}
                 </div>
@@ -1247,7 +1243,7 @@ function Cta({ onQuiz }: { onQuiz: () => void }) {
         <div className={`cta-banner-compact reveal${inView ? ' in' : ''}`} ref={ref}>
           <div className="cta-compact-img">
             <img
-              src="https://images.pexels.com/photos/8961342/pexels-photo-8961342.jpeg?auto=compress&cs=tinysrgb&w=600"
+              src="https://images.pexels.com/photos/11951215/pexels-photo-11951215.jpeg?auto=compress&cs=tinysrgb&w=600"
               alt="Производство металлоконструкций"
               loading="lazy"
             />
