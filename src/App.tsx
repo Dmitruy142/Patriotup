@@ -6,6 +6,8 @@ import {
   Star, MapPin, Mail, Clock, FileCheck,
   Trash2, ArrowUpRight, CheckCircle2,
   Check, User, Loader2, Send, XCircle,
+  Square, Frame, DoorOpen, Grid2x2, Sun, DoorClosed, Grid3x3,
+  RectangleHorizontal, TreePalm,
 } from 'lucide-react';
 import { useReveal, useCountUp } from '@/hooks';
 
@@ -300,6 +302,7 @@ type ProductInfo = {
   desc: string;
   features: string[];
   photo: string;
+  icon: React.ElementType;
 };
 
 const PRODUCTS: ProductInfo[] = [
@@ -308,104 +311,117 @@ const PRODUCTS: ProductInfo[] = [
     desc: 'Лёгкие и долговечные окна из алюминиевого профиля. Не деформируются, не боятся перепадов температур. Подходят для балконов, фасадов, коммерческих помещений.',
     features: ['Профиль Provedal и Alutech', 'Срок службы 50+ лет', 'Покраска в любой цвет RAL', 'Тёплый и холодный варианты'],
     photo: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=600',
+    icon: Square,
   },
   {
     label: 'Пластиковые окна',
     desc: 'ПВХ-профиль с двухкамерными стеклопакетами — тепло и тихо. Идеально для квартир и домов. Установка с откосами и подоконниками в один день.',
     features: ['Двухкамерные стеклопакеты', 'Энергосберегающее покрытие', 'Откосы и подоконник в тот же день', 'Москитные сетки в комплекте'],
     photo: 'https://images.pexels.com/photos/1643374/pexels-photo-1643374.jpeg?auto=compress&cs=tinysrgb&w=600',
+    icon: Square,
   },
   {
     label: 'Остекление балконов и лоджий',
     desc: 'Холодное алюминиевое и тёплое остекление под ключ. Замер, производство, монтаж, отделка и вывоз мусора — один подрядчик, одна цена.',
     features: ['Холодное от 35 000 ₽', 'Тёплое с терморазрывом', 'Отделка и утепление', 'Мусор убираем сами'],
     photo: 'https://images.pexels.com/photos/6538933/pexels-photo-6538933.jpeg?auto=compress&cs=tinysrgb&w=600',
+    icon: RectangleHorizontal,
   },
   {
     label: 'Алюминиевые фасады',
     desc: 'Витражное и фасадное остекление для бизнес-центров, магазинов и производственных зданий. Стоечно-ригельные системы с терморазрывом.',
     features: ['Стоечно-ригельные системы', 'Закалённое и тонированное стекло', 'Тёплый контур для круглогодичного использования', 'Гарантия 5 лет'],
     photo: 'https://images.pexels.com/photos/11861957/pexels-photo-11861957.jpeg?auto=compress&cs=tinysrgb&w=600',
+    icon: Grid2x2,
   },
   {
     label: 'Входные группы',
     desc: 'Стеклянные тамбуры, алюминиевые двери, автоматические раздвижные системы. Для магазинов, кафе, офисов и бизнес-центров.',
     features: ['Закалённое стекло 6–8 мм', 'Автоматические раздвижные двери', 'Антипаник-система', 'Монтаж за 10–15 дней'],
     photo: 'https://images.pexels.com/photos/181341/office-work-office-building-181341.jpeg?auto=compress&cs=tinysrgb&w=600',
+    icon: DoorOpen,
   },
   {
     label: 'Зимние сады и веранды',
     desc: 'Остеклённые веранды, беседки и зимние сады. Алюминиевый каркас с тёплым контуром — комфортно круглый год.',
     features: ['Тёплый алюминиевый профиль', 'Панорамное остекление', 'Любые размеры и формы', 'Слияние с ландшафтом'],
     photo: 'https://images.pexels.com/photos/1571463/pexels-photo-1571463.jpeg?auto=compress&cs=tinysrgb&w=600',
+    icon: TreePalm,
   },
   {
     label: 'Офисные перегородки',
     desc: 'Стационарные и мобильные стеклянные перегородки для зонирования офисов, торговых залов и переговорных. Звукоизоляция до 35 дБ.',
     features: ['Закалённое стекло 6 мм', 'Интегрированные жалюзи', 'Звукоизоляция до 35 дБ', 'Монтаж за 5–8 дней'],
     photo: 'https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=600',
+    icon: Grid3x3,
   },
   {
     label: 'Витражи',
     desc: 'Витражные алюминиевые системы для фасадов, кровли и интерьеров. Индивидуальное изготовление под проект.',
     features: ['Алюминиевый каркас', 'Любые размеры и конфигурации', 'Энергосберегающие стеклопакеты', 'Покраска в RAL'],
     photo: 'https://images.pexels.com/photos/2599538/pexels-photo-2599538.jpeg?auto=compress&cs=tinysrgb&w=600',
+    icon: Frame,
   },
   {
     label: 'Стальные двери',
     desc: 'Входные двери для квартир, домов и коммерческих помещений. Три класса: Эконом, Стандарт, Премиум. С установкой.',
     features: ['Три класса защиты', 'Терморазрыв в двери', 'Монтаж с отделкой откосов', 'От 13 000 ₽'],
     photo: 'https://images.pexels.com/photos/345431/pexels-photo-345431.jpeg?auto=compress&cs=tinysrgb&w=600',
+    icon: DoorClosed,
   },
   {
     label: 'Решётки на окна',
     desc: 'Декоративные и защитные решётки на окна. Сварные и кованые варианты. Покраска в любой цвет.',
     features: ['Сварные и кованые', 'Любой рисунок', 'Покраска в RAL', 'Монтаж на любые окна'],
     photo: 'https://images.pexels.com/photos/2092700/pexels-photo-2092700.jpeg?auto=compress&cs=tinysrgb&w=600',
+    icon: Grid3x3,
   },
   {
     label: 'Навесы и козырьки',
     desc: 'Навесы для автомобилей, козырьки над входом. Из поликарбоната, металлопрофиля и стекла. Сварные металлокаркасы.',
     features: ['Поликарбонат или стекло', 'Сварной металлокаркас', 'Выдерживает снеговую нагрузку', 'Любые размеры'],
     photo: 'https://images.pexels.com/photos/2596277/pexels-photo-2596277.jpeg?auto=compress&cs=tinysrgb&w=600',
+    icon: Sun,
   },
   {
     label: 'Заборы и ограждения',
     desc: 'Заборы из профнастила, металлические ограждения, сварные секции. С монтажом под ключ.',
     features: ['Профнастил, евроштакетник, сетка', 'Сварные секции', 'Покраска в RAL', 'Монтаж под ключ'],
     photo: 'https://images.pexels.com/photos/2092656/pexels-photo-2092656.jpeg?auto=compress&cs=tinysrgb&w=600',
+    icon: Grid2x2,
   },
   {
     label: 'Ворота и калитки',
     desc: 'Откатные, распашные и секционные ворота. Калитки в едином стиле с забором. Автоматика по запросу.',
     features: ['Откатные и распашные', 'Секционные ворота', 'Автоматика Came, Nice', 'Калитки в едином стиле'],
     photo: 'https://images.pexels.com/photos/2092057/pexels-photo-2092057.jpeg?auto=compress&cs=tinysrgb&w=600',
+    icon: DoorOpen,
   },
   {
     label: 'Металлоконструкции любой сложности',
     desc: 'Металлокаркасы, лестницы, перила, фермы — проектируем и изготавливаем по вашим размерам. Своё производство.',
     features: ['Проектирование по ТЗ', 'Сварные металлоконструкции', 'Любая сложность', 'Покраска и антикоррозийная обработка'],
     photo: 'https://images.pexels.com/photos/8961342/pexels-photo-8961342.jpeg?auto=compress&cs=tinysrgb&w=600',
+    icon: Factory,
   },
   {
     label: 'Изделия из металла',
     desc: 'Кованые и сварные изделия: решётки, перила, лестницы, заборы, навесы. Индивидуальное изготовление.',
     features: ['Художественная ковка', 'Сварные конструкции', 'Любой дизайн', 'Покраска и цинкование'],
     photo: 'https://images.pexels.com/photos/2092699/pexels-photo-2092699.jpeg?auto=compress&cs=tinysrgb&w=600',
+    icon: Wrench,
   },
 ];
 
 function ProductCard({ product, idx, onOpen }: { product: ProductInfo; idx: number; onOpen: () => void }) {
+  const Ic = product.icon;
   return (
-    <div className="prod-card prod-card-photo" style={{ animationDelay: `${idx * 50}ms` }} onClick={onOpen}>
-      <div className="prod-card-img">
-        <img src={product.photo} alt={product.label} loading="lazy" />
-        <div className="prod-card-img-overlay" />
-      </div>
-      <div className="prod-card-body">
-        <div className="l">{product.label}</div>
-        <ArrowUpRight className="prod-arrow" size={16} />
-      </div>
+    <div className="prod-card" style={{ animationDelay: `${idx * 50}ms` }} onClick={onOpen} role="button" tabIndex={0}
+      onKeyDown={e => { if (e.key === 'Enter') onOpen(); }}
+    >
+      <div className="prod-ic"><Ic /></div>
+      <div className="l">{product.label}</div>
+      <ArrowUpRight className="prod-arrow" size={16} />
     </div>
   );
 }
@@ -744,7 +760,7 @@ function ProjectModal({ work, onClose, onQuiz }: { work: WorkItem | null; onClos
 
 function Works({ onQuiz }: { onQuiz: () => void }) {
   const [active, setActive] = useState('Все работы');
-  const [visible, setVisible] = useState(12);
+  const [visible, setVisible] = useState(6);
   const [selected, setSelected] = useState<WorkItem | null>(null);
   const { ref, inView } = useReveal();
   const filterMap: Record<string, (w: WorkItem) => boolean> = {
@@ -754,8 +770,9 @@ function Works({ onQuiz }: { onQuiz: () => void }) {
     'Перегородки': w => w.type === 'Перегородка',
     'Балконы': w => w.type === 'Балкон',
   };
-  const shown = WORKS.filter(filterMap[active]).slice(0, visible);
-  const filteredCount = WORKS.filter(filterMap[active]).length;
+  const filtered = WORKS.filter(filterMap[active]);
+  const shown = filtered.slice(0, visible);
+  const hasMore = visible < filtered.length;
   return (
     <section className="section" id="works">
       <div className="wrap">
@@ -768,7 +785,7 @@ function Works({ onQuiz }: { onQuiz: () => void }) {
           {FILTERS.map(f => (
             <button key={f} type="button"
               className={`filter-pill${active === f ? ' active' : ''}`}
-              onClick={() => { setActive(f); setVisible(12); }}>{f}</button>
+              onClick={() => { setActive(f); setVisible(6); }}>{f}</button>
           ))}
         </div>
         <div className={`works-grid reveal${inView ? ' in' : ''}`} ref={ref}>
@@ -777,7 +794,7 @@ function Works({ onQuiz }: { onQuiz: () => void }) {
           ))}
         </div>
         <div className="prod-btn-row">
-          {visible < filteredCount ? (
+          {hasMore ? (
             <button type="button" className="btn btn-outline-dark" onClick={() => setVisible(v => v + 6)}>Показать ещё <ArrowRight size={15} /></button>
           ) : (
             <button type="button" className="btn btn-primary" onClick={onQuiz}>Рассчитать стоимость <ArrowRight size={15} /></button>
@@ -957,6 +974,13 @@ const FAQ = [
 ];
 
 function FAQItem({ q, a, isOpen, onToggle, index }: { q: string; a: string; isOpen: boolean; onToggle: () => void; index: number }) {
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState(0);
+  useEffect(() => {
+    if (contentRef.current) {
+      setHeight(isOpen ? contentRef.current.scrollHeight : 0);
+    }
+  }, [isOpen]);
   return (
     <div className={`faq-item${isOpen ? ' open' : ''}`}>
       <button className="faq-q" type="button" aria-expanded={isOpen} aria-controls={`faq-answer-${index}`} onClick={onToggle}>
@@ -964,8 +988,8 @@ function FAQItem({ q, a, isOpen, onToggle, index }: { q: string; a: string; isOp
         <span className="txt">{q}</span>
         <span className="faq-toggle" />
       </button>
-      <div id={`faq-answer-${index}`} className="faq-a" style={{ maxHeight: isOpen ? 250 : 0 }}>
-        <div className="faq-a-inner">{a}</div>
+      <div id={`faq-answer-${index}`} className="faq-a" style={{ maxHeight: isOpen ? height : 0 }}>
+        <div className="faq-a-inner" ref={contentRef}>{a}</div>
       </div>
     </div>
   );

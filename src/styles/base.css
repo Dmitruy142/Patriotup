@@ -362,13 +362,13 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* ===== Works ===== */
 .filters { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 28px; }
 .filter-pill {
-  padding: 8px 16px; border-radius: 999px; border: 1px solid var(--hair);
-  background: #fff; color: var(--ink-2); font-weight: 500; font-size: 13px;
+  padding: 10px 20px; border-radius: 8px; border: 1px solid var(--hair);
+  background: #fff; color: var(--ink-2); font-weight: 600; font-size: 13px;
   transition: all var(--dur) var(--ease);
 }
-.filter-pill:hover { border-color: var(--orange-border); color: var(--orange); }
-.filter-pill.active { background: var(--orange); color: #fff; border-color: var(--orange); }
-.works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.filter-pill:hover { border-color: var(--orange-border); color: var(--orange); transform: translateY(-1px); }
+.filter-pill.active { background: var(--orange); color: #fff; border-color: var(--orange); box-shadow: 0 4px 12px -4px rgba(244,95,7,0.35); }
+.works-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 .work-card {
   border-radius: 10px; overflow: hidden; background: #fff;
   border: 1px solid var(--hair);
@@ -382,8 +382,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .work-info h3 { font-size: 15px; margin-bottom: 4px; }
 .work-meta { font-size: 13px; color: var(--orange); font-weight: 600; }
 .work-meta .sep { color: var(--ink-3); margin: 0 5px; }
-@media (max-width: 900px) { .works-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 480px) { .works-grid { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .works-grid { grid-template-columns: 1fr; } }
 
 /* ===== Advantages ===== */
 .adv-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
@@ -480,8 +479,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .faq-toggle::after { width: 2px; height: 13px; transform: translate(-50%, -50%); }
 .faq-item.open .faq-toggle { transform: rotate(45deg); }
 .faq-item.open .faq-toggle::before, .faq-item.open .faq-toggle::after { background: var(--orange); }
-.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease); }
-.faq-item.open .faq-a { max-height: 200px; }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s var(--ease); }
 .faq-a-inner { padding: 0 20px 18px 48px; font-size: 14px; color: var(--ink-2); line-height: 1.55; }
 
 /* ===== CTA ===== */
@@ -871,6 +869,10 @@ ul { margin: 0; padding: 0; list-style: none; }
 @media (max-width: 480px) {
   .about-stats { grid-template-columns: 1fr 1fr; gap: 8px; }
   .about-stat { padding: 12px 10px; }
+  .about-lead { font-size: 16px; }
+  .about-text { font-size: 14px; }
+  .about-img-badge { left: 12px; bottom: 12px; padding: 10px 14px; }
+  .aib-num { font-size: 20px; }
 }
 
 /* ===== Hero Benefits (kept for compatibility) */
@@ -1042,35 +1044,14 @@ ul { margin: 0; padding: 0; list-style: none; }
   .quiz-options { grid-template-columns: 1fr; }
   .quiz-question { font-size: 20px; }
 }
+@media (max-width: 600px) {
+  .quiz-modal-photo { padding: 20px 16px 16px; }
+  .quiz-question { font-size: 19px; margin-bottom: 16px; }
+}
 
-/* ===== Product Cards with Photos ===== */
-.prod-card-photo {
-  cursor: pointer; text-align: left; padding: 0; overflow: hidden;
-}
-.prod-card-img {
-  position: relative; aspect-ratio: 4/3; overflow: hidden;
-}
-.prod-card-img img {
-  width: 100%; height: 100%; object-fit: cover;
-  transition: transform 0.6s var(--ease);
-}
-.prod-card-photo:hover .prod-card-img img { transform: scale(1.06); }
-.prod-card-img-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.25) 100%);
-}
-.prod-card-body {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 12px 14px; gap: 8px;
-}
-.prod-card-body .l { font-size: 12px; }
-.prod-card-photo .prod-arrow {
-  position: static; opacity: 0.4; transform: none;
-}
-.prod-card-photo:hover .prod-arrow { opacity: 1; color: var(--orange); }
-.prod-card-photo::after { left: 0; right: 0; bottom: 0; }
-@media (max-width: 900px) { .prod-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 600px) { .prod-grid { grid-template-columns: repeat(2, 1fr); } }
+/* ===== Product Cards — icon style (reverted from photos) ===== */
+.prod-card { cursor: pointer; }
+.prod-card:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
 
 /* ===== Product Detail Modal ===== */
 .product-detail-modal { grid-template-columns: 1fr 1.1fr; }
